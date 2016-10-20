@@ -4,7 +4,10 @@
   "description": "A basic budgeting tool API",
   "main": "index.js",
   "scripts": {
-    "test": "test"
+    "configure": "npm install",
+    "test": "mocha -c -R mochawesome",
+    "cover": "istanbul cover _mocha",
+    "start": "node src/index.js"
   },
   "repository": {
     "type": "git",
@@ -15,5 +18,16 @@
   "bugs": {
     "url": "https://github.com/the-dataist/budget-api/issues"
   },
-  "homepage": "https://github.com/the-dataist/budget-api#readme"
+  "homepage": "https://github.com/the-dataist/budget-api#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "istanbul": "^0.4.5",
+    "mocha": "^3.1.2",
+    "mochawesome": "^1.5.3",
+    "typescript": "^2.0.3"
+  },
+  "dependencies": {
+    "restify": "^4.1.1",
+    "typescript": "^2.0.3"
+  }
 }
