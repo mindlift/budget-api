@@ -1,0 +1,19 @@
+{
+  "name": "budget-api",
+  "version": "1.0.0",
+  "description": "A basic budgeting tool API",
+  "main": "index.js",
+  "scripts": {
+    "test": "test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/the-dataist/budget-api.git"
+  },
+  "author": "the-dataist",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/the-dataist/budget-api/issues"
+  },
+  "homepage": "https://github.com/the-dataist/budget-api#readme"
+}
