@@ -4,7 +4,8 @@
   "description": "A basic budgeting tool API",
   "main": "index.js",
   "scripts": {
-    "configure": "npm install",
+    "clean": "rm -rf ./typings/; rm -rf ./node_modules/",
+    "configure": "npm install; typings install --global",
     "test": "mocha -c -R mochawesome",
     "cover": "istanbul cover _mocha",
     "start": "node src/index.js"
@@ -24,7 +25,8 @@
     "istanbul": "^0.4.5",
     "mocha": "^3.1.2",
     "mochawesome": "^1.5.3",
-    "typescript": "^2.0.3"
+    "typescript": "^2.0.3",
+    "typings": "^1.4.0"
   },
   "dependencies": {
     "restify": "^4.1.1",
