@@ -2,7 +2,7 @@
   "name": "budget-api",
   "version": "1.0.0",
   "description": "A basic budgeting tool API",
-  "main": "index.js",
+  "main": "App.js",
   "scripts": {
     "clean": "rm -rf ./typings/; rm -rf ./node_modules/",
     "configure": "npm install; typings install --global",
