@@ -20,10 +20,8 @@ export default class Server {
             console.log("Server::start() - the current directory is: " + __dirname);
 
             let dir_path: string = __dirname + path.sep + '..' + path.sep + 'https' + path.sep;
-            let certificateBuffer: Buffer = fs.readFileSync(dir_path + 'devcert.pem');
-            let keyBuffer: Buffer = fs.readFileSync(dir_path + 'devkey.pem');
-            let certificate: string = certificateBuffer.toString();
-            let key: string = keyBuffer.toString();
+            let certificate: string = fs.readFileSync(dir_path + 'devcert.pem').toString();
+            let key: string = fs.readFileSync(dir_path + 'devkey.pem').toString();
 
             // console.log("Server::start() - certificate is: " + certificate);
 
@@ -33,10 +31,39 @@ export default class Server {
                 name: 'budget-api',
             });
 
+            // register the route handlers with the restify server
             that.server.get('/', function(req, res, next) {
-                res.json({body: "hello world"});
+                let params = req.headers;
+                res.json({body: params});
                 next();
             });
+
+            // accounts
+            that.server.get('/api/v1/accounts', function(req, res, next) {});
+
+            that.server.post('/api/v1/accounts', function(req, res, next) {});
+
+            that.server.put('/api/v1/accounts', function(req, res, next) {});
+
+            that.server.del('/api/v1/accounts', function(req, res, next) {});
+
+            // list of budgets
+            that.server.get('/api/v1/accounts/budgets', function(req, res, next) {});
+
+            that.server.post('/api/v1/accounts/budgets', function(req, res, next) {});
+
+            that.server.put('/api/v1/accounts/budgets', function(req, res, next) {});
+
+            that.server.del('/api/v1/accounts/budgets', function(req, res, next) {});
+
+            // budget detail
+            that.server.get('/api/v1/accounts/budgets/:budget', function(req, res, next) {});
+
+            that.server.post('/api/v1/accounts/budgets/:budget', function(req, res, next) {});
+
+            that.server.put('/api/v1/accounts/budgets/:budget', function(req, res, next) {});
+
+            that.server.del('/api/v1/accounts/budgets/:budget', function(req, res, next) {});
 
             that.server.listen(that.port, function() {
                 console.log('%s listening at %s', that.server.name, that.server.url);

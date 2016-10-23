@@ -29,6 +29,7 @@
     "typings": "^1.4.0"
   },
   "dependencies": {
+    "jsonwebtoken": "^7.1.9",
     "restify": "^4.1.1",
     "typescript": "^2.0.3"
   }
