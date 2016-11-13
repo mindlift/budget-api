@@ -7,9 +7,9 @@ export default class App {
         let server = new Server(port);
         server.start()
             .then(function (val: boolean) {
-            console.log("App::initServer() - started: " + val);})
+                console.log("App::initServer() - started: " + val);})
             .catch(function (err: Error) {
-            console.log("App::initServer() - ERROR: " + err.message);});
+                console.log("App::initServer() - ERROR: " + err.message);});
     }
 }
 

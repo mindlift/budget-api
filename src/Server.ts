@@ -11,7 +11,6 @@ export default class Server {
     private server: restify.Server;
     private db: any;
 
-
     constructor(port: number) {
         this.port = port;
         this.db = InitDB.initialize();

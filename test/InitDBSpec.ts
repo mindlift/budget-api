@@ -3,7 +3,7 @@
  */
 import {expect} from 'chai';
 import InitDB from '../src/InitDB';
-import {BudgetAccount} from "../src/model/BudgetAccount";
+import {Account} from "../src/model/BudgetAccount";
 
 describe("InitDB", function() {
 
@@ -14,7 +14,7 @@ describe("InitDB", function() {
     });
 
     it("Should be able to add an account to the database", function() {
-        let account: BudgetAccount = {
+        let account: Account = {
             username: 'admin',
             email: 'budget.api@gmail.com',
             budgets: []
@@ -32,13 +32,13 @@ describe("InitDB", function() {
             })
     });
 
-    it("Should be able to retrieve the budget_account data from the db", function() {
+    it("Should be able to retrieve budget_account data from the db on a JSON attribute value", function() {
         return db.any("select * from budget_account where data->>$1 = $2", ['username', 'admin'])
             .then(function(result: any) {
                 console.log(result);
                 console.log(Object.keys(result));
                 expect(result).to.not.be.null;
-                // expect(result.data).to.have.all.keys('username', 'email', 'budgets');
+                expect(result[0].data).to.have.all.keys('username', 'email', 'budgets');
             })
             .catch(function (error: any) {
                 console.error("There was an error: " + error.message);

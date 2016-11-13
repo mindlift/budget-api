@@ -3,7 +3,7 @@
  */
 import {Budget} from "./Budget";
 
-export interface BudgetAccount {
+export interface Account {
 
     username: string;
     email: string;

@@ -12,3 +12,8 @@ CREATE TABLE budget_account (
 	id SERIAL,
 	data JSONB
 );
+
+CREATE TABLE entry (
+	id SERIAL,
+	data JSONB
+)

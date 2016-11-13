@@ -1,12 +1,13 @@
 /**
  * Created by joshua on 2016-11-12.
  */
+import path = require('path');
 
 export default class InitDB {
 
     // this could potentially result in problems if user doesn't have
     // permissions for all parts on the path of __dirname
-    private static options_path = __dirname + '/../DbConnectOptions.json';
+    private static options_path = __dirname + path.sep + '..' + path.sep + 'DbConnectOptions.json';
 
     // write custom options to the default path specified in options_path
     public static writeOptions(options?: any): void {
