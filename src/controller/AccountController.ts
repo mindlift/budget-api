@@ -14,11 +14,10 @@ export default class AccountController {
     public createNewAccount(username: string, email: string, password: string): Promise<Account> {
         // validate email, password
 
-        // if account exists with supplied email, reject
-
-        // else, insert new account
-
         return new Promise(function(resolve, reject) {
+            // if account exists with supplied email, reject
+
+            // else, insert new account
 
         });
     }
