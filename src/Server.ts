@@ -1,15 +1,20 @@
 import restify = require('restify');
 import fs = require('fs');
 import path = require('path');
+import pgp = require('pg-promise');
 import RouteHandler from "./RouteHandler";
+import InitDB from "./InitDB";
 
 export default class Server {
 
     private port: number;
     private server: restify.Server;
+    private db: any;
+
 
     constructor(port: number) {
         this.port = port;
+        this.db = InitDB.initialize();
     }
 
     // starts the server using HTTPS
@@ -17,13 +22,13 @@ export default class Server {
         let that = this;
         return new Promise(function(resolve, reject) {
 
-            console.log("Server::start() - the current directory is: " + __dirname);
+            console.log("Server::initialize() - the current directory is: " + __dirname);
 
             let dir_path: string = __dirname + path.sep + '..' + path.sep + 'https' + path.sep;
             let certificate: string = fs.readFileSync(dir_path + 'devcert.pem').toString();
             let key: string = fs.readFileSync(dir_path + 'devkey.pem').toString();
 
-            // console.log("Server::start() - certificate is: " + certificate);
+            // console.log("Server::initialize() - certificate is: " + certificate);
 
             that.server = restify.createServer({
                 certificate: certificate,
@@ -69,8 +74,6 @@ export default class Server {
                 console.log('%s listening at %s', that.server.name, that.server.url);
                 resolve(true);
             })
-
-            // that.server.get('/', );
 
         })
     }

@@ -10,3 +10,4 @@ test/*.map
 typings/
 mochawesome-reports/
 https/
+DbConnectOptions.json

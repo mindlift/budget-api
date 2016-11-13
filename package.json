@@ -30,6 +30,7 @@
   },
   "dependencies": {
     "jsonwebtoken": "^7.1.9",
+    "pg-promise": "^5.3.5",
     "restify": "^4.1.1",
     "typescript": "^2.0.3"
   }

@@ -3,7 +3,7 @@ import Server from "./Server";
 
 export default class App {
     public initServer(port: number) {
-        console.log('App::initServer( ' + port + ' ) - start');
+        console.log('App::initServer( ' + port + ' ) - initialize');
         let server = new Server(port);
         server.start()
             .then(function (val: boolean) {

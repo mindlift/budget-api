@@ -6,6 +6,7 @@
     "jsonwebtoken": "registry:dt/jsonwebtoken#0.0.0+20160720062725",
     "mocha": "registry:dt/mocha#2.2.5+20160720003353",
     "node": "registry:dt/node#6.0.0+20161019125345",
+    "pg-promise": "github:vitaly-t/pg-promise",
     "restify": "registry:dt/restify#2.0.0+20160928142801"
   }
 }

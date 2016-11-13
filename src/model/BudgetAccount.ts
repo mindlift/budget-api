@@ -5,7 +5,8 @@ import {Budget} from "./Budget";
 
 export interface BudgetAccount {
 
-    userName: string;
+    username: string;
+    email: string;
     budgets: Budget[];
 
 }
