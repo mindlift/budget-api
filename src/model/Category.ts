@@ -6,7 +6,7 @@ export interface Category {
 
     name: string;
     type: CategoryType;
-    budgetAmount: number;
+    budgeted_amount: number;
     entries: Entry[];
 
 }
@@ -19,6 +19,6 @@ interface Entry {
 }
 
 enum CategoryType {
-    Debit,
-    Credit
+    debit,
+    credit
 }
