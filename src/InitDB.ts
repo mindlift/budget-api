@@ -8,6 +8,7 @@ export default class InitDB {
     // permissions for all parts on the path of __dirname
     private static options_path = __dirname + '/../DbConnectOptions.json';
 
+    // write custom options to the default path specified in options_path
     public static writeOptions(options?: any): void {
         if (options) {
             let fs = require('fs');
@@ -16,6 +17,8 @@ export default class InitDB {
 
     }
 
+    // reads pgp options from file at optional path (or default specified in options_path)
+    // returns the options as JSON object
     public static readOptions(path?: string): any {
         let fs = require('fs');
         let optsAsString: string;
