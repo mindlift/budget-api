@@ -9,11 +9,9 @@ export default class Server {
 
     private port: number;
     private server: restify.Server;
-    private db: any;
 
     constructor(port: number) {
         this.port = port;
-        this.db = InitDB.initialize();
     }
 
     // starts the server using HTTPS

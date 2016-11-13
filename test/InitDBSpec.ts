@@ -3,7 +3,7 @@
  */
 import {expect} from 'chai';
 import InitDB from '../src/InitDB';
-import {Account} from "../src/model/BudgetAccount";
+import {Account} from "Account.ts";
 
 describe("InitDB", function() {
 
@@ -19,7 +19,7 @@ describe("InitDB", function() {
             email: 'budget.api@gmail.com',
             budgets: []
         };
-        return db.one('insert into budget_account(data) values ($1) returning data', [account])
+        return db.one('insert into account(data) values ($1) returning data', [account])
             .then(function(result: any) {
                 console.log(result);
                 console.log(Object.keys(result));
